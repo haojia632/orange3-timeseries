@@ -21,7 +21,7 @@ ENTRY_POINTS = {
         # Syntax: category name = path.to.package.containing.widgets
         # Widget category specification can be seen in
         #    orangecontrib/datafusion/widgets/__init__.py
-        'Time Series = orangecontrib.timeseries.widgets',
+        '时间序列 = orangecontrib.timeseries.widgets',
     ),
 
     # Widget help

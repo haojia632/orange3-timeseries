@@ -12,13 +12,13 @@ class OWBaseModel(widget.OWWidget):
     LEARNER = None
 
     class Inputs:
-        time_series = Input("Time series", Table)
+        time_series = Input("时间序列", Table)
 
     class Outputs:
-        learner = Output("Time series model", _BaseModel)
-        forecast = Output("Forecast",  Timeseries)
-        fitted_values = Output("Fitted values", Timeseries)
-        residuals = Output("Residuals", Timeseries)
+        learner = Output("时间序列模型", _BaseModel)
+        forecast = Output("预测",  Timeseries)
+        fitted_values = Output("匹配值", Timeseries)
+        residuals = Output("残差", Timeseries)
 
     want_main_area = False
     resizing_enabled = False
@@ -116,13 +116,13 @@ class OWBaseModel(widget.OWWidget):
     def send_report(self):
         name = self.learner_name or str(self.learner if self.learner else '')
         if name:
-            self.report_items((("Name", name),))
+            self.report_items((("名称", name),))
         if str(self.learner) != name:
-            self.report_items((("Model type", str(self.learner)),))
-        self.report_items((("Forecast steps", self.forecast_steps),
-                           ("Confidence interval", self.forecast_confint),))
+            self.report_items((("模型类型", str(self.learner)),))
+        self.report_items((("预测步骤", self.forecast_steps),
+                           ("置信区间", self.forecast_confint),))
         if self.data is not None:
-            self.report_data("Time series", self.data)
+            self.report_data("时间序列", self.data)
 
     # GUI
     def setup_layout(self):
@@ -141,7 +141,7 @@ class OWBaseModel(widget.OWWidget):
     def add_learner_name_widget(self):
         self.name_lineedit = gui.lineEdit(
             self.controlArea, self, 'learner_name', box='Name',
-            tooltip='The name will identify this model in other widgets')
+            tooltip='名称用于指代该模型')
 
     def add_bottom_buttons(self):
         box = gui.vBox(self.controlArea, 'Forecast')
