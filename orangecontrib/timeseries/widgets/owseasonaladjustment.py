@@ -20,10 +20,10 @@ class OWSeasonalAdjustment(widget.OWWidget):
     priority = 5500
 
     class Inputs:
-        time_series = Input("Time series", Table)
+        time_series = Input("时间序列", Table)
 
     class Outputs:
-        time_series = Output("Time series", Timeseries)
+        time_series = Output("时间序列", Timeseries)
 
     want_main_area = False
     resizing_enabled = False

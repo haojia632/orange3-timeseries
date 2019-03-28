@@ -43,7 +43,7 @@ class PlotConfigWidget(QWidget, gui.OWComponent):
 
         hbox = gui.hBox(self)
         gui.comboBox(hbox, self, 'plot_type',
-                     label='Type:',
+                     label='类型:',
                      orientation='horizontal',
                      items=('line', 'step line', 'column', 'area', 'spline'),
                      sendSelectedValue=True,
@@ -62,7 +62,7 @@ class PlotConfigWidget(QWidget, gui.OWComponent):
                                                      }''')
         button.clicked.connect(lambda: self.sigClosed.emit(ax, self))
         hbox.layout().addWidget(button)
-        gui.checkBox(self, self, 'is_logarithmic', 'Logarithmic axis',
+        gui.checkBox(self, self, 'is_logarithmic', '对数坐标轴',
                      callback=lambda: self.sigLogarithmic.emit(ax, self.is_logarithmic))
         box.addWidget(view)
 
@@ -337,7 +337,7 @@ class OWLineChart(widget.OWWidget):
         self.forecasts = OrderedDict()
         self.varmodel = VariableListModel(parent=self)
         icon = QIcon(join(dirname(__file__), 'icons', 'LineChart-plus.png'))
-        self.add_button = button = QPushButton(icon, ' &Add plot', self)
+        self.add_button = button = QPushButton(icon, ' &添加图形', self)
         button.clicked.connect(self.add_plot)
         self.controlArea.layout().addWidget(button)
         self.configsArea = gui.vBox(self.controlArea)

@@ -17,17 +17,16 @@ from orangecontrib.timeseries.agg_funcs import AGG_FUNCTIONS, Mode, Concatenate
 
 
 class OWAggregate(widget.OWWidget):
-    name = 'Aggregate'
-    description = "Aggregate data in bins by second, minute, hour, day, " \
-                  "week, month, or year."
+    name = '聚集'
+    description = "通过时间单位聚集数据，秒、分、时、天等."
     icon = 'icons/Aggregate.svg'
     priority = 560
 
     class Inputs:
-        time_series = Input("Time series", Table)
+        time_series = Input("时间序列", Table)
 
     class Outputs:
-        time_series = Output("Time series", Timeseries)
+        time_series = Output("时间序列", Timeseries)
 
     ax1 = settings.Setting('months of year')
     ax2 = settings.Setting('years')

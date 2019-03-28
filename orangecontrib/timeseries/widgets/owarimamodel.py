@@ -6,8 +6,8 @@ from orangecontrib.timeseries.widgets._owmodel import OWBaseModel
 
 
 class OWARIMAModel(OWBaseModel):
-    name = 'ARIMA Model'
-    description = 'Model the time series using ARMA, ARIMA, or ARIMAX.'
+    name = 'ARIMA模型'
+    description = 'ARMA, ARIMA, or ARIMAX模型'
     icon = 'icons/ARIMA.svg'
     priority = 210
 
@@ -26,7 +26,7 @@ class OWARIMAModel(OWBaseModel):
     ]
 
     class Inputs(OWBaseModel.Inputs):
-        exogenous_data = Input("Exogenous data", Timeseries)
+        exogenous_data = Input("节律数据", Timeseries)
 
     def __init__(self):
         super().__init__()

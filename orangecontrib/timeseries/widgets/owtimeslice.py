@@ -63,10 +63,10 @@ class OWTimeSlice(widget.OWWidget):
     priority = 550
 
     class Inputs:
-        data = Input("Data", Table)
+        data = Input("数据", Table)
 
     class Outputs:
-        subset = Output("Subset", Table)
+        subset = Output("数据子集", Table)
 
     want_main_area = False
 
